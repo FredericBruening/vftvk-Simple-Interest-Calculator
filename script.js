@@ -23,6 +23,13 @@ function compute(event) {
         years = document.getElementById('years').value,
         resultContainer = document.getElementById('result');
 
+    resultContainer.innerHTML = '';
+
+    if(amount <= 0) {
+        alert('Please enter a positive number');
+        return;
+    }
+
     resultContainer.innerHTML = 'If you deposit ' + amount + ',<br>' +
         'at an interest rate of ' + rate + '%.<br>' +
         'You will receive an amount of ' + amount * (rate / 100) * years + ',<br>' +
