@@ -27,13 +27,14 @@ function compute(event) {
 
     if(amount <= 0) {
         alert('Please enter a positive number');
+        document.getElementById("principal").focus();
         return;
     }
 
-    resultContainer.innerHTML = 'If you deposit ' + amount + ',<br>' +
-        'at an interest rate of ' + rate + '%.<br>' +
-        'You will receive an amount of ' + amount * (rate / 100) * years + ',<br>' +
-        'in the year ' + (+(new Date()).getFullYear() + +years);
+    resultContainer.innerHTML = 'If you deposit <span>' + amount + '</span>,<br>' +
+        'at an interest rate of <span>' + rate + '%</span>.<br>' +
+        'You will receive an amount of <span>' + amount * (rate / 100) * years + '</span>,<br>' +
+        'in the year <span>' + (+(new Date()).getFullYear() + +years) + '</span>';
 
     resultContainer.style.display = 'block';
 }
